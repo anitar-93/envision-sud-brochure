@@ -15,18 +15,27 @@
 
   <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/page-flip.browser.min.js"></script>
   <script>
-    const flipbook = new St.PageFlip(document.getElementById("flipbook"), {
-      width: 800,
-      height: 600,
-      size: "stretch",
-      minWidth: 315,
-      minHeight: 420,
-      maxWidth: 1200,
-      maxHeight: 1600,
-      maxShadowOpacity: 0.5,
-      showCover: true,
-      mobileScrollSupport: false
-    });
+  const flipbook = new St.PageFlip(document.getElementById("flipbook"), {
+    width: 800,
+    height: 600,
+    size: "stretch",
+    minWidth: 315,
+    minHeight: 420,
+    maxWidth: 1200,
+    maxHeight: 1600,
+    maxShadowOpacity: 0.5,
+    showCover: true,
+    mobileScrollSupport: false
+  });
+
+  const pages = Array.from({ length: 10 }, (_, i) => ({
+    src: `../pages/${i + 1}.jpg`,
+    width: 800,
+    height: 600
+  }));
+
+  flipbook.loadFromImages(pages.map(p => p.src));
+</script>
 
     const pages = Array.from({ length: 10 }, (_, i) => ({
       src: `pages/${i + 1}.jpg`,
