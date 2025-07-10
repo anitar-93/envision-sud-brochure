@@ -14,7 +14,7 @@
   <div id="flipbook"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/page-flip.browser.min.js"></script>
-  <script>
+ <script>
   const flipbook = new St.PageFlip(document.getElementById("flipbook"), {
     width: 800,
     height: 600,
@@ -28,20 +28,19 @@
     mobileScrollSupport: false
   });
 
-  const pages = Array.from({ length: 10 }, (_, i) => ({
-    src: `../pages/${i + 1}.jpg`,
-    width: 800,
-    height: 600
-  }));
-
-  flipbook.loadFromImages(pages.map(p => p.src));
+  flipbook.loadFromImages([
+    '../pages/1.jpg',
+    '../pages/2.jpg',
+    '../pages/3.jpg',
+    '../pages/4.jpg',
+    '../pages/5.jpg',
+    '../pages/6.jpg',
+    '../pages/7.jpg',
+    '../pages/8.jpg',
+    '../pages/9.jpg',
+    '../pages/10.jpg'
+  ]);
 </script>
-
-    const pages = Array.from({ length: 10 }, (_, i) => ({
-      src: `pages/${i + 1}.jpg`,
-      width: 800,
-      height: 600
-    }));
 
     flipbook.loadFromImages(pages.map(p => p.src));
   </script>
